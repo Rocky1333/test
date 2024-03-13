@@ -1,0 +1,213 @@
+header {
+    margin: 0px;
+
+}
+
+form {
+    margin: 0 auto;
+    background-color: #452170;
+    width: auto;
+}
+
+.header__inner {
+    text-align: center;
+}
+
+.inform__text {
+    padding: 40px 0;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+}
+
+.warning__wrapper {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.warning-box {
+    text-align: center;
+    background-color: #BCDFF1;
+    width: 260px;
+    margin: 0 auto;
+}
+
+.warning__img {
+    padding-top: 20px;
+}
+
+.confirm__btn {
+    background-color: #154273;
+    border: none;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 104px;
+    padding: 6px 0;
+    transition: all .3s;
+}
+
+.confirm__btn:hover {
+    background-color: #fff;
+    color: #154273;
+}
+
+.warning__text {
+    max-width: 230px;
+    font-family: Sans, Arial, Verdana;
+    text-align: left;
+    padding: 15px 20px 20px 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.form__title {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: -35px;
+}
+
+.inform {
+    margin: 0 auto 70px;
+    background-color: #452170;
+    width: auto;
+    color: #ffffff;
+    font-family: Sans, Arial, Verdana;
+    font-size: 30px;
+    line-height: 40px;
+
+
+}
+
+.form {
+    padding-bottom: 15px;
+
+}
+
+h1 {
+    color: #ffffff;
+    font-family: Sans, Arial, Verdana
+}
+
+body {
+    margin: 0 auto;
+
+}
+
+.group {
+    margin: 10px;
+}
+
+.group1 {
+    margin-top: 60px;
+}
+
+input {
+    height: 30px;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.card2 {
+    margin-top: 50px;
+}
+
+label {
+    color: #ffffff;
+    font-family: Sans, Arial, Verdana
+}
+
+button {
+    color: #ffffff;
+
+}
+
+.footer__inner {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+}
+
+.footer__socials {
+    text-align: center;
+}
+
+.menu__info-item+.menu__info-item {
+    margin-top: 15px;
+
+}
+
+.footer__socials a+a {
+    margin-left: 30px;
+}
+
+.menu__info-link {
+    text-decoration: none;
+    color: #000000;
+    font-family: inherit;
+}
+
+.group_cvv input,
+.group_exp input {
+    text-align: center;
+    width: 70px;
+
+
+
+
+}
+
+.group_cvv input::placeholder,
+.group_exp input::placeholder {
+    text-align: center;
+}
+
+.group_cvv input {
+    width: 50px;
+}
+
+.card input {
+    text-align: center;
+    width: 150px;
+}
+
+.card input::placeholder {
+    text-align: center;
+}
+
+.group_name input {
+    text-align: center;
+
+}
+
+.group_name input::placeholder {
+    text-align: center;
+}
+
+.dannie {
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
+    color: #ffffff;
+    font-family: Sans, Arial, Verdana;
+    max-width: 200px;
+    overflow: hidden;
+    margin-bottom: -20px;
+}
+
+.group input {
+    text-align: center;
+}
+
+.group_vnumber input {
+    width: 100px;
+}
+.group_birth input {
+    width: 100px;
+}
